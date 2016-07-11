@@ -19,6 +19,7 @@ public:
 	bool startGame();
 	bool exitGame();
 
+
 	// a selector callback
 	void menuCloseCallback(cocos2d::Ref* pSender);
 

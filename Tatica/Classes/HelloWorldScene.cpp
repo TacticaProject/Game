@@ -52,3 +52,50 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
     exit(0);
 #endif
 }
+
+
+void HelloWorld::availableMove(PlayerCharacter player)
+{
+	int TempMap[45][38];
+	for(int width = 0; width < 45; width++)
+	{
+		for(int height = 0; height < 38; height++)
+		{
+			TempMap[width][height] = -1;
+		}
+	}
+	TempMap[(int)player.getLocation().x][(int)player.getLocation().y] = 0;
+	for(int i = 0; i < player.getStemina(); i++)
+	{
+		for(int width = 0; width < 45; width++)
+		{
+			for(int height = 0; height < 38; height++)
+			{
+				//갈 수 있는 곳과 거리 저장
+				if(player.getStemina > 0)
+				{
+					if(width > 0 && GameMap[width-1][height].State == 0 
+						&& (TempMap[width-1][height] > TempMap[width][height] || TempMap[width-1][height] == -1))
+					{
+						TempMap[width-1][height] = TempMap[width][height] + 1;
+					}
+					if(width < 44 && GameMap[width+1][height].State == 0 
+						&& (TempMap[width+1][height] > TempMap[width][height] || TempMap[width+1][height] == -1))
+					{
+						TempMap[width+1][height] = TempMap[width][height] + 1;
+					}
+					if(height > 0 && GameMap[width][height-1].State == 0 
+						&& (TempMap[width][height-1] > TempMap[width][height] || TempMap[width][height-1] == -1))
+					{
+						TempMap[width][height-1] = TempMap[width][height] + 1;
+					}
+					if(height < 37 && GameMap[width][height+1].State == 0 
+						&& (TempMap[width][height+1] > TempMap[width][height] || TempMap[width][height+1] == -1))
+					{
+						TempMap[width][height+1] = TempMap[width][height] + 1;
+					}
+				}
+			}
+		}
+	}
+}

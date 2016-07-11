@@ -2,6 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "proj.win32\PlayerCharacter.h"
 USING_NS_CC;
 
 enum STATE{
@@ -34,6 +35,8 @@ public:
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
     
+	void availableMove(PlayerCharacter player);
+
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
 
