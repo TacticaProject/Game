@@ -104,3 +104,6 @@ proj.win32/Release.*/
 # proj.win8.1-universal
 
 # others
+*.suo
+*.sdf
+*.log
