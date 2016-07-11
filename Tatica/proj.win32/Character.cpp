@@ -1,5 +1,32 @@
 #include "Character.h"
 
+std::string spriteName[8] = { "SwordMan.png",
+"Archer.png",
+"Shilder.png",
+"Snake.png",
+"Skeleton.png",
+"Centauros.png",
+"Anticardium.png",
+"TheRed.png" };
+
+
+status ClassStat[8] = {
+	{ 100, 100, 30, 5, 10, 1 },
+	{ 100, 100, 20, 3, 12, 4 },
+	{ 120, 100, 15, 10, 9, 1 },
+	{ 35, 0, 38, 0, 10, 1 },
+	{ 70, 0, 15, 4, 7, 1 },
+	{ 45, 0, 25, 2, 10, 4 },
+	{ 60, 0, 55, 4, 5, 1 },
+	{ 50, 0, 30, 2, 8, 1 }
+};
+
+
+
+Character::Character()
+{
+
+}
 
 bool Character::getDamage()
 {
@@ -26,6 +53,7 @@ bool Character::setStat(CLASS Class)
 	Stemina = ClassStat[Class].Stamina;
 	AttackRange = ClassStat[Class].AttackRange;
 	
+	return true;
 }
 
 Point Character::getLocation()

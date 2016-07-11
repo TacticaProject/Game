@@ -71,7 +71,7 @@ bool GameMain::exitGame()
 	return true;
 }
 
-void GameMain::menuCloseCallback(Ref* pSender)
+void GameMain::menuCloseCallback(cocos2d::Ref* pSender)
 {
 	CCMenuItem* pTempItem = (CCMenuItem*)pSender;
 
@@ -90,8 +90,6 @@ void GameMain::menuCloseCallback(Ref* pSender)
 	default:
 		break;
 	}
-
-	CCLog("%d Menu Clicked\n", i);
 }
 
 

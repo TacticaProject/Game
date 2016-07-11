@@ -17,16 +17,9 @@ enum CLASS {
 	TheRed
 };
 
-std::string spriteName[8] = {
-	"SwordMan.png",
-	"Archer.png",
-	"Shilder.png",
-	"Snake.png",
-	"Skeleton.png",
-	"Centauros.png",
-	"anticardium.png",
-	"TheRed" 
-};
+extern std::string spriteName[8];
+	
+
 
 typedef struct status{
 	int HealthPoint;
@@ -38,16 +31,7 @@ typedef struct status{
 	
 }status;
 
-status ClassStat[8] = {
-	{ 100, 100, 30, 5, 10, 1 },
-	{ 100, 100, 20, 3, 12, 4 },
-	{ 120, 100, 15, 10, 9, 1 },
-	{ 35, 0, 38, 0, 10, 1 },
-	{ 70, 0, 15, 4, 7, 1 },
-	{ 45, 0, 25, 2, 10, 4 },
-	{ 60, 0, 55, 4, 5, 1 },
-	{ 50, 0, 30, 2, 8, 1 }
-};
+extern status ClassStat[8];
 
 //캐릭터 부모 클래스. 모든 캐릭터클래스는 이 클래스를 상속받는다.
 class Character
@@ -73,4 +57,4 @@ private:
 	Point Location;
 	enum Rotation;
 };
-#endif __CHARACTER_H__
+#endif 

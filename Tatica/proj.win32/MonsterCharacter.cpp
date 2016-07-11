@@ -2,10 +2,11 @@
 
 MonsterCharacter::MonsterCharacter(CLASS Class, Point point)
 {
-	if(Class <= 3)
+	if(Class < 3)
 	{
 		printf("에러다!!에러다!!에러다!!");
 	}
+
 }
 
 bool MonsterCharacter::MonsterAI()

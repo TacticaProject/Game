@@ -18,6 +18,6 @@ private:
 	bool isMove();
 	bool isAttack();
 	bool checkPriorityEnemy();
-}
+};
 
-#endif __MONSTER_CHARACTER__
+#endif 
