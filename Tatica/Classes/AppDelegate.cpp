@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+//#include "HelloWorldScene.h"
+#include "proj.win32\GameMain.h"
 
 USING_NS_CC;
 
@@ -50,8 +51,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0 / 60);
-	    
-    auto scene = HelloWorld::createScene();
+	
+	auto scene = GameMain::createScene();
 
     // run
     director->runWithScene(scene);

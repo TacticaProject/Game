@@ -5,34 +5,34 @@
 
 Scene* GameMain::createScene()
 {
-    // 'scene' is an autorelease object
-    auto scene = Scene::create();
-    
-    // 'layer' is an autorelease object
-    auto layer = GameMain::create();
+	// 'scene' is an autorelease object
+	auto scene = Scene::create();
 
-    // add layer as a child to scene
-    scene->addChild(layer);
+	// 'layer' is an autorelease object
+	auto layer = GameMain::create();
 
-    // return the scene
-    return scene;
+	// add layer as a child to scene
+	scene->addChild(layer);
+
+	// return the scene
+	return scene;
 }
 
 // on "init" you need to initialize your instance
 bool GameMain::init()
 {
-    //////////////////////////////
-    // 1. super init first
-    if ( !Layer::init() )
-    {
-        return false;
-    }
+	//////////////////////////////
+	// 1. super init first
+	if (!Layer::init())
+	{
+		return false;
+	}
 
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto item_1 = MenuItemFont::create("게임시작",CC_CALLBACK_1(GameMain::menuCloseCallback, this));
-	auto item_2 = MenuItemFont::create("게임종료",CC_CALLBACK_1(GameMain::menuCloseCallback, this));
+	auto item_1 = MenuItemFont::create("게임시작", CC_CALLBACK_1(GameMain::menuCloseCallback, this));
+	auto item_2 = MenuItemFont::create("게임종료", CC_CALLBACK_1(GameMain::menuCloseCallback, this));
 
 	item_1->setTag(1);
 	item_2->setTag(2);
@@ -40,7 +40,7 @@ bool GameMain::init()
 	auto menu = Menu::create(item_1, item_2, NULL);
 	menu->alignItemsVertically();
 	this->addChild(menu);
- 
+
 
 	return true;
 }
@@ -50,7 +50,7 @@ void GameMain::onMouseLeft(Event *event)
 {
 	EventMouse* e = (EventMouse*)event;
 
-	if(e->getMouseButton() == MOUSE_BUTTON_LEFT)
+	if (e->getMouseButton() == MOUSE_BUTTON_LEFT)
 	{
 	}
 }
@@ -60,6 +60,7 @@ void GameMain::onMouseLeft(Event *event)
 bool GameMain::startGame()
 {
 	Director::getInstance()->replaceScene(HelloWorld::createScene());
+	return true;
 }
 
 //게임 종료 버튼이 눌러졌을 때
@@ -67,27 +68,34 @@ bool GameMain::startGame()
 bool GameMain::exitGame()
 {
 	CCDirector::sharedDirector()->end();
+	return true;
 }
 
 void GameMain::menuCloseCallback(Ref* pSender)
 {
-    CCMenuItem* pTempItem = (CCMenuItem*)pSender;
-    
-    int i = pTempItem->getTag();
-    
-    CCScene* pScene;
-    CCTransitionScene* pTran;
-    
-    switch (i) {
-        case 1 :
-            startGame();
-            break;
-        case 2 :
-            exitGame();
-            break;            
-        default:
-            break;
-    }
-    
-    CCLog("%d Menu Clicked\n", i);
+	CCMenuItem* pTempItem = (CCMenuItem*)pSender;
+
+	int i = pTempItem->getTag();
+
+	CCScene* pScene;
+	CCTransitionScene* pTran;
+
+	switch (i) {
+	case 1:
+		startGame();
+		break;
+	case 2:
+		exitGame();
+		break;
+	default:
+		break;
+	}
+
+	CCLog("%d Menu Clicked\n", i);
 }
+
+
+
+
+
+
