@@ -74,6 +74,7 @@ bool Character::setLocation(Point input)
 bool Character::setHealthPoint(int HealthPoint)
 {
 	this->HealthPoint = HealthPoint;
+	return true;
 }
 
 int Character::getStemina()

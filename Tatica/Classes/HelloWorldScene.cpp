@@ -33,12 +33,30 @@ bool HelloWorld::init()
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	
 	_tileMap = TMXTiledMap::create("untitled.tmx");
-	_background = _tileMap->layerNamed("base");
-
-	this->addChild(_tileMap);
-
+/*	_background = _tileMap->layerNamed("base");
+	_respawn = _tileMap->layerNamed("respawn");
+	_tree = _tileMap->layerNamed("tree");
+	_item = _tileMap->layerNamed("item");
+	_object = _tileMap->layerNamed("object");
+	_cliff_2 = _tileMap->layerNamed("cliff");
+	_base_2 = _tileMap->layerNamed("base_s");
+	_cliff_bridge = _tileMap->layerNamed("cliff&bridge");*/
 	
 
+
+	//this->addChild(_tileMap);
+	
+	Size winsize = Director::getInstance()->getWinSize();
+	auto scroll = ScrollView::create(winsize);
+	scroll->setDirection(ScrollView::Direction::BOTH);
+	scroll->setBounceable(false);
+	scroll->setContainer(_tileMap);
+	scroll->setContentSize(_tileMap->getContentSize());
+
+	auto containorNode = scroll->getContainer();
+	this->addChild(scroll, 1, 1);
+
+	
 	return true;
 }
 
@@ -52,6 +70,26 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
     exit(0);
 #endif
 }
+
+void HelloWorld::scrollViewDidScroll(ScrollView* view)
+
+{
+
+	log("scrollViewDidScroll....");
+
+}
+
+
+
+
+void HelloWorld::scrollViewDidZoom(ScrollView* view)
+
+{
+
+	log("scrollViewDidZoom....");
+
+}
+
 
 
 void HelloWorld::availableMove(PlayerCharacter player)
@@ -72,7 +110,7 @@ void HelloWorld::availableMove(PlayerCharacter player)
 			for(int height = 0; height < 38; height++)
 			{
 				//갈 수 있는 곳과 거리 저장
-				if(player.getStemina > 0)
+				if(player.getStemina() > 0)
 				{
 					if(width > 0 && GameMap[width-1][height].State == 0 
 						&& (TempMap[width-1][height] > TempMap[width][height] || TempMap[width-1][height] == -1))
