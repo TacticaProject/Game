@@ -24,13 +24,12 @@ public:
 	Character();
 	bool getDamage();
 	bool isAttack();
+	bool setClass(CLASS Class);
 private:
 	int HealthPoint, ManaPoint, AttackPoint, DefensePoint, AttackRange, Stemina;
 	bool AttackAvailable;
 	CLASS Class;
 	Point Location;
 	enum Rotation;
-	
-	bool setClass();
 };
 #endif __CHARACTER_H__
