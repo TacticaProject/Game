@@ -8,9 +8,9 @@ USING_NS_CC;
 enum STATE{
 	Free = 0,
 	Block,
-	SwordMan,
-	Archer,
-	Shilder,
+	pSwordMan,
+	pArcher,
+	pShilder,
 	Monster
 };
 
