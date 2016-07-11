@@ -7,7 +7,7 @@
 class PlayerCharacter : public Character
 {
 public:
-	PlayerCharacter();
+	PlayerCharacter(CLASS Class, Point Position);
 	bool usingSkill();
 private:
 	bool setSkill();
