@@ -28,8 +28,12 @@ Character::Character()
 
 }
 
-bool Character::getDamage()
+bool Character::getDamage(int Damage)
 {
+	if(Damage - DefensePoint > 0)
+	{
+		HealthPoint = HealthPoint - Damage + DefensePoint;
+	}
 	return true;
 }
 

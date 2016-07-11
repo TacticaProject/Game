@@ -38,7 +38,7 @@ class Character
 {
 public:
 	Character();
-	bool getDamage();
+	bool getDamage(int Damage);
 	bool isAttack();
 	bool setClass(CLASS Class);
 	bool setStat(CLASS Class);
