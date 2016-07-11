@@ -71,6 +71,11 @@ bool Character::setLocation(Point input)
 	return true;
 }
 
+bool Character::setHealthPoint(int HealthPoint)
+{
+	this->HealthPoint = HealthPoint;
+}
+
 int Character::getStemina()
 {
 	return Stemina;
@@ -99,4 +104,9 @@ int Character::getManaPoint()
 int Character::getDefensePoint()
 {
 	return DefensePoint;
+}
+
+CLASS Character::getClass()
+{
+	return Class;
 }

@@ -15,7 +15,6 @@ enum STATE{
 };
 
 typedef struct map{
-	Point location;
 	int Layer;
 	STATE State;
 }MAP;

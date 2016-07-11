@@ -9,7 +9,7 @@ USING_NS_CC;
 enum CLASS {
 	SwordMan = 0,
 	Archer,
-	Shilder,
+	Shielder,
 	Snake,
 	Skeleton,
 	Centauros,
@@ -42,6 +42,7 @@ public:
 	bool isAttack();
 	bool setClass(CLASS Class);
 	bool setStat(CLASS Class);
+	bool setHealthPoint(int HealthPoint);
 	Point getLocation();
 	bool setLocation(Point input);
 	int getStemina();
@@ -50,6 +51,7 @@ public:
 	int getAttackPoint();
 	int	getDefensePoint();
 	int getAttackRange();
+	CLASS getClass();
 private:
 	int HealthPoint, ManaPoint, AttackPoint, DefensePoint, AttackRange, Stemina;
 	bool AttackAvailable;
