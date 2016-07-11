@@ -6,7 +6,7 @@
 class MonsterCharacter : public Character
 {
 public:
-	MonsterCharacter();
+	MonsterCharacter(CLASS Class, Point location);
 	//적 행동 결정
 	bool MonsterAI();
 private:

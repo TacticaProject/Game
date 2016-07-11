@@ -4,11 +4,27 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+enum STATE{
+	Free = 0,
+	Block,
+	SwordMan,
+	Archer,
+	Shilder,
+	Monster
+};
+
+typedef struct map{
+	Point location;
+	int Layer;
+	STATE State;
+}MAP;
+
 class HelloWorld : public cocos2d::Layer
 {
 private:
 	CCTMXTiledMap *_tileMap;
 	CCTMXLayer *_background; 
+	MAP GameMap[45][38];
 
 public:
     static cocos2d::Scene* createScene();
