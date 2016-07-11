@@ -11,6 +11,7 @@ public:
 	PlayerCharacter(CLASS Class, Point Position);
 	bool getDamage(int Damage);
 	bool usingSkill();
+	int Attack();
 private:
 	int SkillPoint;
 };
