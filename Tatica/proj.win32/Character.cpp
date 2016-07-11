@@ -11,7 +11,8 @@ bool Character::isAttack()
 	return true;
 }
 
-bool Character::setClass()
+bool Character::setClass(CLASS Class)
 {
+	this->Class = Class;
 	return true;
 };
