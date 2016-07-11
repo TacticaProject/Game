@@ -31,8 +31,8 @@ bool GameMain::init()
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-	auto item_1 = MenuItemFont::create("게임시작", CC_CALLBACK_1(GameMain::menuCloseCallback, this));
-	auto item_2 = MenuItemFont::create("게임종료", CC_CALLBACK_1(GameMain::menuCloseCallback, this));
+	auto item_1 = MenuItemImage::create("GAMESTART.png", "GAMESTART.png", "GAMESTART.png", CC_CALLBACK_1(GameMain::menuCloseCallback, this));
+	auto item_2 = MenuItemImage::create("EXIT.png", "EXIT.png", "EXIT.png", CC_CALLBACK_1(GameMain::menuCloseCallback, this));
 
 	item_1->setTag(1);
 	item_2->setTag(2);
